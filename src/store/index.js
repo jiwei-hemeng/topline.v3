@@ -6,8 +6,14 @@ export default createStore({
     };
   },
   mutations: {
-    increment(state) {
-      state.count++;
+    increment(state, n) {
+      state.count += n;
+    },
+  },
+  actions: {
+    ac_increment({ state, commit }) {
+      console.log("context", state.count);
+      commit("increment", 2);
     },
   },
 });

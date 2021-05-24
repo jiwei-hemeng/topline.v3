@@ -2,11 +2,12 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <div>count: {{ count }}</div>
+  <button @click="add">12313212</button>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "App",
   components: {
@@ -15,6 +16,11 @@ export default {
   computed: {
     ...mapState({
       count: (state) => state.count,
+    }),
+  },
+  methods: {
+    ...mapActions({
+      add: "ac_increment",
     }),
   },
 };
