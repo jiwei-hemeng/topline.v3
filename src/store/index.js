@@ -1,19 +1,13 @@
 import { createStore } from "vuex";
+const files = require.context("./modules", false, /\.js$/);
+const modules = {};
+files.keys().forEach((key) => {
+  modules[key.replace(/(\.\/|\.js)/g, "")] = files(key).default;
+});
+Object.keys(modules).forEach((key) => {
+  modules[key]["namespaced"] = true;
+});
+console.log("modules", modules);
 export default createStore({
-  state() {
-    return {
-      count: 20,
-    };
-  },
-  mutations: {
-    increment(state, n) {
-      state.count += n;
-    },
-  },
-  actions: {
-    ac_increment({ state, commit }) {
-      console.log("context", state.count);
-      commit("increment", 2);
-    },
-  },
+  modules,
 });

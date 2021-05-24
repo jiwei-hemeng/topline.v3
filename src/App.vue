@@ -15,12 +15,15 @@ export default {
   },
   computed: {
     ...mapState({
-      count: (state) => state.count,
+      count: (state) => {
+        console.log("state", state);
+        return state.user.age;
+      },
     }),
   },
   methods: {
     ...mapActions({
-      add: "ac_increment",
+      add: "user/setAcAge",
     }),
   },
 };
