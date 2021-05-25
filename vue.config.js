@@ -27,4 +27,9 @@ module.exports = {
       return args;
     });
   },
+  configureWebpack: {
+    externals: {
+      vue: "Vue",
+    },
+  },
 };
