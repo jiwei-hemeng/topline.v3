@@ -1,36 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-  <div>count: {{ count }}</div>
-  <button @click="add">12313212</button>
+  <div class="App">
+    <h1>Hello App!</h1>
+    <p>
+      <router-link to="/">Go to Home</router-link>
+      <router-link to="/about">Go to About</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+  </div>
 </template>
-
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import { mapState, mapActions } from "vuex";
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
-  computed: {
-    ...mapState({
-      count: (state) => {
-        console.log("state", state);
-        return state.user.age;
-      },
-    }),
-  },
-  methods: {
-    ...mapActions({
-      add: "setAcAge",
-    }),
-  },
 };
 </script>
-
 <style lang="scss">
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
