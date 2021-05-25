@@ -1,13 +1,8 @@
 import { createStore } from "vuex";
-const files = require.context("./modules", false, /\.js$/);
-const modules = {};
-files.keys().forEach((key) => {
-  modules[key.replace(/(\.\/|\.js)/g, "")] = files(key).default;
-});
-Object.keys(modules).forEach((key) => {
-  modules[key]["namespaced"] = true;
-});
-console.log("modules", modules);
+// 导入user模块
+import User from "./modules/user";
 export default createStore({
-  modules,
+  modules: {
+    user: User,
+  },
 });

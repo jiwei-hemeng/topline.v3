@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      add: "user/setAcAge",
+      add: "setAcAge",
     }),
   },
 };
