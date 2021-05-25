@@ -18,9 +18,6 @@ module.exports = {
           "^/api": "",
         },
       },
-      "/foo": {
-        target: "http://yd.abc.top",
-      },
     },
   },
 };
