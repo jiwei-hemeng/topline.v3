@@ -15,7 +15,20 @@ const routes = [
     meta: { transition: "fade" },
   },
 ];
-export default createRouter({
+
+const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
+
+// 允许访问的路由列表
+const whiteList = ["/", "/about", "/home"];
+
+router.beforeEach((to) => {
+  // ...
+  if (whiteList.indexOf(to.path) === -1) {
+    return false;
+  }
+  return true;
+});
+export default router;
