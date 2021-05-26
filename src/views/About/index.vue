@@ -1,29 +1,28 @@
 <template>
-  <div>user: {{ nickName }} --- {{ count }}</div>
+  <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
   <button @click="add">12313212</button>
 </template>
 
 <script>
-import { computed, toRefs, reactive } from "vue";
+import { computed } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "About",
   setup() {
     const store = useStore();
     const state = store.state;
-    const count = computed(() => {
-      return state.user.age;
-    });
     const add = () => {
       return store.dispatch("setAcAge", 1);
     };
-    const nickName = computed(() => {
-      return state.user.userName;
+    const user = computed(() => {
+      return {
+        userName: state.user.userName,
+        age: state.user.age,
+      };
     });
-    let user = reactive({ count, nickName });
     return {
-      ...toRefs(user),
       add,
+      user,
     };
   },
 };
