@@ -15,7 +15,7 @@ export default {
       return state.user.age;
     });
     const add = () => {
-      return store.dispatch("setAcAge");
+      return store.dispatch("setAcAge", 1);
     };
     const nickName = computed(() => {
       return state.user.userName;
