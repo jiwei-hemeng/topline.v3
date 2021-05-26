@@ -8,8 +8,7 @@ const mutations = {
   },
 };
 const actions = {
-  setAcAge({ state, commit }, num) {
-    console.log("年龄", state.age);
+  setAcAge({ commit }, num) {
     commit("setAge", num);
   },
 };
