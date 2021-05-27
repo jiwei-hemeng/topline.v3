@@ -2,11 +2,14 @@
   <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
   <div>姓名: {{ name }} 年龄 {{ age }}</div>
   <button @click="add">点我+1</button>
+  <button @click="toHome">编程式的导航按钮</button>
 </template>
 
 <script>
 import { computed, reactive, toRefs, watchEffect, watch } from "vue";
 import { useStore } from "vuex";
+import router from "@/router/";
+console.log(router);
 export default {
   name: "About",
   setup() {
@@ -18,7 +21,7 @@ export default {
     });
     const add = () => {
       testmr.age++;
-      return store.dispatch("setAcAge", 1);
+      store.dispatch("setAcAge", 1);
     };
     const user = computed(() => {
       return {
@@ -26,6 +29,11 @@ export default {
         age: state.user.age,
       };
     });
+    const toHome = () => {
+      router.push({
+        path: "/",
+      });
+    };
     watchEffect(() => {
       // 1、watch 是需要传入侦听的数据源，而 watchEffect 是自动收集数据源作为依赖。
       // 2、watch 可以访问侦听状态变化前后的值，而 watchEffect 没有。
@@ -49,6 +57,7 @@ export default {
       add,
       user,
       ...toRefs(testmr),
+      toHome,
     };
   },
 };
