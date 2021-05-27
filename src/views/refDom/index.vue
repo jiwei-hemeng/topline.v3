@@ -11,7 +11,6 @@
 
 <script>
 import { ref, nextTick } from "vue";
-
 export default {
   name: "refDom",
   setup() {
@@ -20,7 +19,6 @@ export default {
     const arr = ref([1, 2, 3]);
     // 存储dom数组
     const myRef = ref([]);
-
     const setRef = (el) => {
       myRef.value.push(el);
     };

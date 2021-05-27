@@ -9,7 +9,6 @@
 import { computed, reactive, toRefs, watchEffect, watch } from "vue";
 import { useStore } from "vuex";
 import router from "@/router/";
-console.log(router);
 export default {
   name: "About",
   setup() {
