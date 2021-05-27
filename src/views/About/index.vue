@@ -39,7 +39,9 @@ export default {
         console.log("watch监听数据的变化", newVal, oldVal);
       },
       {
+        // 深度监听
         deep: true,
+        // 马上监听数据的变化
         immediate: true,
       }
     );
