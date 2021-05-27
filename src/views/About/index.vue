@@ -1,7 +1,8 @@
 <template>
   <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
   <div>姓名: {{ name }} 年龄 {{ age }}</div>
-  <button @click="add">点我+2</button>
+  <!-- <button @click="add">点我+2</button> -->
+  <myButton @click="add">点我+2</myButton>
   <button @click="toHome">refDom</button>
 </template>
 
@@ -9,8 +10,12 @@
 import { computed, reactive, toRefs, watchEffect, watch } from "vue";
 import { useStore } from "vuex";
 import router from "@/router/";
+import myButton from "@/components/button";
 export default {
   name: "About",
+  components: {
+    myButton,
+  },
   setup() {
     const store = useStore();
     const state = store.state;
