@@ -9,7 +9,9 @@ const Button = defineComponent({
   },
   setup(props, { slots }) {
     return () => (
-      <button class={("btn", `btn-${props.type}`)}>{slots.default()}</button>
+      <button class={("mybtn", `mybtn-${props.type}`)}>
+        {slots.default()}
+      </button>
     );
   },
 });
