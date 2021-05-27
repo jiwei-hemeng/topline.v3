@@ -5,19 +5,21 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: () => import("@/views"),
+    component: () => import(/* webpackChunkName: "group-user" */ "@/views"),
     meta: { transition: "fade" },
   },
   {
     path: "/about",
     name: "about",
-    component: () => import("@/views/About"),
+    component: () =>
+      import(/* webpackChunkName: "group-user" */ "@/views/About"),
     meta: { transition: "fade" },
   },
   {
     path: "/refDom",
     name: "refDom",
-    component: () => import("@/views/refDom"),
+    component: () =>
+      import(/* webpackChunkName: "group-user" */ "@/views/refDom"),
     meta: { transition: "fade" },
   },
 ];
