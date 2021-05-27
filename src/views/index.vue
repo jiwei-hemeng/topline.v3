@@ -46,8 +46,5 @@ export default {
     // vue2.x 中 mounted
     console.log("vue2.x 中 mounted");
   },
-  onMounted() {
-    console.log("Counter ===> 相当于 vue2.x 中 mounted");
-  },
 };
 </script>

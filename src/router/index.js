@@ -14,6 +14,12 @@ const routes = [
     component: () => import("@/views/About"),
     meta: { transition: "fade" },
   },
+  {
+    path: "/refDom",
+    name: "refDom",
+    component: () => import("@/views/refDom"),
+    meta: { transition: "fade" },
+  },
 ];
 
 const router = createRouter({
@@ -22,7 +28,7 @@ const router = createRouter({
 });
 
 // 允许访问的路由列表
-const whiteList = ["/", "/about", "/home"];
+const whiteList = ["/", "/about", "/home", "/refDom"];
 
 router.beforeEach((to) => {
   // ...

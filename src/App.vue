@@ -4,6 +4,7 @@
     <div>
       <router-link to="/">Home(v3生命周期)</router-link>
       <router-link to="/about">About(setup)</router-link>
+      <router-link to="/refDom">refDom(ref获取Dom)</router-link>
     </div>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->

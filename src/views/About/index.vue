@@ -1,8 +1,8 @@
 <template>
   <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
   <div>姓名: {{ name }} 年龄 {{ age }}</div>
-  <button @click="add">点我+1</button>
-  <button @click="toHome">编程式的导航按钮</button>
+  <button @click="add">点我+2</button>
+  <button @click="toHome">refDom</button>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
     });
     const add = () => {
       testmr.age++;
-      store.dispatch("setAcAge", 1);
+      store.dispatch("setAcAge", 2);
     };
     const user = computed(() => {
       return {
@@ -31,7 +31,7 @@ export default {
     });
     const toHome = () => {
       router.push({
-        path: "/",
+        path: "/refDom",
       });
     };
     watchEffect(() => {
