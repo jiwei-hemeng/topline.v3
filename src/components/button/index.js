@@ -2,16 +2,11 @@ import { defineComponent } from "vue";
 
 const Button = defineComponent({
   props: {
-    type: String,
-    required: () => {
-      return true;
-    },
+    type: { type: String, default: () => "primary" },
   },
   setup(props, { slots }) {
     return () => (
-      <button class={("mybtn", `mybtn-${props.type}`)}>
-        {slots.default()}
-      </button>
+      <button class={`mybtn-${props.type}`}>{slots.default()}</button>
     );
   },
 });
