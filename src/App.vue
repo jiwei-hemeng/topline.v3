@@ -12,8 +12,17 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "App",
+  mounted() {
+    console.log("baseurl", process.env.VUE_APP_BASE_URL);
+    axios
+      .get(process.env.VUE_APP_BASE_URL + "index/recommend.json")
+      .then((res) => {
+        console.log(res.data.list);
+      });
+  },
 };
 </script>
 <style lang="scss" scoped>
