@@ -1,10 +1,11 @@
 const state = () => ({
   userName: "saa",
-  age: 20,
+  age: Number(sessionStorage.getItem("user-age")) || 25,
 });
 const mutations = {
   setAge(state, n) {
     state.age += n;
+    sessionStorage.setItem("user-age", state.age);
   },
 };
 const actions = {
