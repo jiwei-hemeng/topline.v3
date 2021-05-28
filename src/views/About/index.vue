@@ -2,7 +2,7 @@
   <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
   <div>姓名: {{ name }} 年龄 {{ age }}</div>
   <!-- <button @click="add">点我+2</button> -->
-  <myButton @click="add">点我+2</myButton>
+  <myButton @click="add" @addchage="addchage">点我+2</myButton>
   <button @click="toHome">refDom</button>
 </template>
 
@@ -38,6 +38,9 @@ export default {
         path: "/refDom",
       });
     };
+    const addchage = (val) => {
+      console.log("我是子组件触发的", val);
+    };
     watchEffect(() => {
       // 1、watch 是需要传入侦听的数据源，而 watchEffect 是自动收集数据源作为依赖。
       // 2、watch 可以访问侦听状态变化前后的值，而 watchEffect 没有。
@@ -62,6 +65,7 @@ export default {
       user,
       ...toRefs(testmr),
       toHome,
+      addchage,
     };
   },
 };

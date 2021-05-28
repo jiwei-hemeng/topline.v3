@@ -4,9 +4,16 @@ const Button = defineComponent({
   props: {
     type: { type: String, default: () => "primary" },
   },
-  setup(props, { slots }) {
+  setup(props, { slots, emit }) {
     return () => (
-      <button class={`mybtn-${props.type}`}>{slots.default()}</button>
+      <button
+        class={`mybtn-${props.type}`}
+        onClick={() => {
+          emit("addchage", "hahhah");
+        }}
+      >
+        {slots.default()}
+      </button>
     );
   },
 });
