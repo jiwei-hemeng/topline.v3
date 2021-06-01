@@ -1,6 +1,7 @@
 import { defineComponent } from "vue";
 
 const Button = defineComponent({
+  name: "MyBtn",
   props: {
     type: { type: String, default: () => "primary" },
   },
