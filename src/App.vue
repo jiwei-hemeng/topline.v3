@@ -16,8 +16,9 @@ import { getCurrentInstance, inject } from "vue";
 export default {
   name: "App",
   setup() {
-    const { proxy } = getCurrentInstance();
+    const { proxy, vnode } = getCurrentInstance();
     console.log("$title", proxy, proxy.$title);
+    console.log("vnode", vnode);
     const $message = inject("$message");
     console.log("message", $message);
   },
