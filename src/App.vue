@@ -12,8 +12,15 @@
   </div>
 </template>
 <script>
+import { getCurrentInstance, inject } from "vue";
 export default {
   name: "App",
+  setup() {
+    const { proxy } = getCurrentInstance();
+    console.log("$title", proxy, proxy.$title);
+    const $message = inject("$message");
+    console.log("message", $message);
+  },
 };
 </script>
 <style lang="scss" scoped>
