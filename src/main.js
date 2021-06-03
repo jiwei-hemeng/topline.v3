@@ -6,4 +6,6 @@ import "@/narmalize.css";
 const app = createApp(App);
 app.use(router);
 app.use(store);
+app.config.globalProperties.$title = "vue3.0 测试";
+app.provide("$message", "哈喽，我是测试");
 app.mount("#app");
