@@ -8,7 +8,13 @@
     </div>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+      <!-- 使用任何自定义过渡和回退到 `fade` -->
+      <transition :name="route.meta.transition || 'fade'">
+        <component :is="Component" />
+        <!-- <router-view /> -->
+      </transition>
+    </router-view>
   </div>
 </template>
 <script>
@@ -36,6 +42,15 @@ export default {
   }
   a {
     color: skyblue;
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 2s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
   }
 }
 </style>
