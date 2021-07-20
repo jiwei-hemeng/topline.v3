@@ -1,11 +1,11 @@
 <template>
   <div class="App">
     <h1>Hello App!</h1>
-    <div>
-      <router-link to="/">生命周期</router-link>
-      <router-link to="/about">setup</router-link>
-      <router-link to="/refDom">ref获取Dom</router-link>
-      <router-link to="/animationend">动画</router-link>
+    <div class="box">
+      <router-link class="nav" to="/">生命周期</router-link>
+      <router-link class="nav" to="/about">setup</router-link>
+      <router-link class="nav" to="/refDom">ref获取Dom</router-link>
+      <router-link class="nav" to="/animationend">动画</router-link>
     </div>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
@@ -65,5 +65,19 @@ export default {
   .fade-leave-to {
     opacity: 0;
   }
+}
+</style>
+<style scoped>
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box .nav {
+  width: 24%;
+  height: 60px;
+  line-height: 60px;
+}
+.box .nav:not(:nth-child(4n)) {
+  margin-right: calc(4% / 3);
 }
 </style>
