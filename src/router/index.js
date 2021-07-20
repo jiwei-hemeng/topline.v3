@@ -13,13 +13,20 @@ const routes = [
     name: "about",
     component: () =>
       import(/* webpackChunkName: "group-user" */ "@/views/About"),
-    meta: { transition: "slide-right" },
+    meta: { transition: "slide-left" },
   },
   {
     path: "/refDom",
     name: "refDom",
     component: () =>
       import(/* webpackChunkName: "group-user" */ "@/views/refDom"),
+    meta: { transition: "slide-left" },
+  },
+  {
+    path: "/animationend",
+    name: "animationend",
+    component: () =>
+      import(/* webpackChunkName: "group-user" */ "@/views/animationend"),
     meta: { transition: "slide-left" },
   },
 ];
@@ -30,7 +37,7 @@ const router = createRouter({
 });
 
 // 允许访问的路由列表
-const whiteList = ["/", "/about", "/home", "/refDom"];
+const whiteList = ["/", "/about", "/home", "/refDom", "/animationend"];
 
 router.beforeEach((to) => {
   // ...
