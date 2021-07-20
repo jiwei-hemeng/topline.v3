@@ -28,7 +28,7 @@
 </template>
 <script>
 import { getCurrentInstance, inject } from "vue";
-import Lodding from "@/components/Lodding"
+import Lodding from "@/components/Lodding";
 export default {
   name: "App",
   setup() {

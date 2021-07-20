@@ -16,9 +16,9 @@ export default {
   data() {
     return {
       show: true
-    }
+    };
   }
-}
+};
 </script>
 <style scoped>
 .bounce-enter-active {
