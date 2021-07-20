@@ -1,9 +1,10 @@
 <template>
-  <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
-  <div>姓名: {{ name }} 年龄 {{ age }}</div>
-  <!-- <button @click="add">点我+2</button> -->
-  <myButton @click="add" @addchage="addchage">点我+2</myButton>
-  <button @click="toHome">refDom</button>
+  <div class="About">
+    <div>姓名: {{ user.userName }} 年龄 {{ user.age }}</div>
+    <div>姓名: {{ name }} 年龄 {{ age }}</div>
+    <myButton @click="add" @addchage="addchage">点我+2</myButton>
+    <button @click="toHome">refDom</button>
+  </div>
 </template>
 
 <script>

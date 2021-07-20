@@ -9,17 +9,19 @@
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view v-slot="{ Component, route }">
-      <!-- 使用任何自定义过渡和回退到 `fade` -->
-      <transition :name="route.meta.transition || 'fade'">
-        <suspense>
-          <template #default>
-            <component :is="Component"></component>
-          </template>
-          <template #fallback>
-            <Lodding />
-          </template>
-        </suspense>
-      </transition>
+      <template v-if="Component">
+        <!-- 使用任何自定义过渡和回退到 `fade` -->
+        <transition :name="route.meta.transition || 'fade'">
+          <suspense>
+            <template #default>
+              <component :is="Component"></component>
+            </template>
+            <template #fallback>
+              <Lodding />
+            </template>
+          </suspense>
+        </transition>
+      </template>
     </router-view>
   </div>
 </template>
