@@ -39,8 +39,8 @@ export default {
     console.log("message", $message);
   },
   components: {
-    Lodding
-  }
+    Lodding,
+  },
 };
 </script>
 <style lang="scss" scoped>
