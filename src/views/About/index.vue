@@ -10,7 +10,7 @@
 <script>
 import { computed, reactive, toRefs, watchEffect, watch } from "vue";
 import { useStore } from "vuex";
-import router from "@/router/";
+import { useRouter, useRoute } from "vue-router";
 import myButton from "@/components/button";
 export default {
   name: "About",
@@ -34,6 +34,9 @@ export default {
         age: state.user.age,
       };
     });
+    const router = useRouter();
+    const route = useRoute();
+    console.log("route", toRefs(route))
     const toHome = () => {
       router.push({
         path: "/refDom",
