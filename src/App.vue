@@ -11,14 +11,21 @@
     <router-view v-slot="{ Component, route }">
       <!-- 使用任何自定义过渡和回退到 `fade` -->
       <transition :name="route.meta.transition || 'fade'">
-        <component :is="Component" />
-        <!-- <router-view /> -->
+        <suspense>
+          <template #default>
+            <component :is="Component"></component>
+          </template>
+          <template #fallback>
+            <Lodding />
+          </template>
+        </suspense>
       </transition>
     </router-view>
   </div>
 </template>
 <script>
 import { getCurrentInstance, inject } from "vue";
+import Lodding from "@/components/Lodding"
 export default {
   name: "App",
   setup() {
@@ -28,6 +35,9 @@ export default {
     const $message = inject("$message");
     console.log("message", $message);
   },
+  components: {
+    Lodding
+  }
 };
 </script>
 <style lang="scss" scoped>
