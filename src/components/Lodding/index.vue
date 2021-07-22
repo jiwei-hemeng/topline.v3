@@ -15,8 +15,8 @@
 </template>
 <script>
 export default {
-  name: "Lodding"
-}
+  name: "Lodding",
+};
 </script>
 <style scoped>
 .loading {
