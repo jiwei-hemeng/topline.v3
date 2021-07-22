@@ -9,6 +9,7 @@ module.exports = {
     port: "80", // 设置端口号
     https: false, //是否使用https协议
     hotOnly: false, //是否开启热更新
+    disableHostCheck: true, // 可以开启内网穿透
     proxy: {
       "/dev-api": {
         target: "https://www.bilibili.com", //API服务器的地址
