@@ -5,28 +5,30 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: () => import(/* webpackChunkName: "group-user" */ "@/views"),
+    component: () => import(/* webpackChunkName: "group-home" */ "@/views"),
     meta: { transition: "slide-left" },
   },
   {
     path: "/about",
     name: "about",
     component: () =>
-      import(/* webpackChunkName: "group-user" */ "@/views/About"),
+      import(/* webpackChunkName: "group-about" */ "@/views/About"),
     meta: { transition: "slide-left" },
   },
   {
     path: "/refDom",
     name: "refDom",
     component: () =>
-      import(/* webpackChunkName: "group-user" */ "@/views/refDom"),
-    meta: { transition: "slide-left" },
+      import(/* webpackChunkName: "group-refDom" */ "@/views/refDom"),
+    meta: { transition: "slide-left", keep: true },
   },
   {
     path: "/animationend",
     name: "animationend",
     component: () =>
-      import(/* webpackChunkName: "group-user" */ "@/views/animationend"),
+      import(
+        /* webpackChunkName: "group-animationend" */ "@/views/animationend"
+      ),
     meta: { transition: "slide-left" },
   },
 ];
@@ -35,7 +37,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
+    if (savedPosition && to.meta.keep) {
       return savedPosition;
     } else {
       return { top: 0 };
