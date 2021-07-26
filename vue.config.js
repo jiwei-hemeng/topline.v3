@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "./",
+  publicPath: "/",
   outputDir: "dist", //build输出目录
   assetsDir: "assets", //静态资源目录（js, css, img）
   lintOnSave: process.env.NODE_ENV !== "production", //是否开启eslint
