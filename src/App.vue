@@ -1,6 +1,5 @@
 <template>
   <div class="App">
-    <h1>Hello App!</h1>
     <div class="box">
       <router-link class="nav" to="/">生命周期</router-link>
       <router-link class="nav" to="/about">setup</router-link>
@@ -50,9 +49,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  h1 {
-    margin: 10px 0;
-  }
   a {
     color: skyblue;
   }

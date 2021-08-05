@@ -48,3 +48,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.Index {
+  width: 375rem;
+  height: 90rem;
+  background-color: skyblue;
+}
+</style>
