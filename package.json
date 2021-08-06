@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
     "vue": "^3.0.0",
+    "vant": "^3.1.5",
     "vue-router": "^4.0.8",
     "vuex": "^4.0.0"
   },
@@ -39,11 +40,23 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "indent": [2, 2],
-      "eqeqeq": [2, "always"],
+      "indent": [
+        2,
+        2
+      ],
+      "eqeqeq": [
+        2,
+        "always"
+      ],
       "no-console": 0,
-      "quotes":[1, "double"],
-      "semi": [2, "always"]
+      "quotes": [
+        1,
+        "double"
+      ],
+      "semi": [
+        2,
+        "always"
+      ]
     }
   },
   "browserslist": [
