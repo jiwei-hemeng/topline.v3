@@ -72,5 +72,8 @@ export default {
       addchage,
     };
   },
+  created() {
+    console.log("route", this.$route);
+  },
 };
 </script>
