@@ -16,7 +16,7 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# 部署到 https://<USERNAME>.github.io
+# 部署到 https://jiwei-hemeng.github.io
 git push -f git@github.com:jiwei-hemeng/jiwei-hemeng.github.io.git main
 
 # 部署到 https://<USERNAME>.github.io/<REPO>

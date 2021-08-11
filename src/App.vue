@@ -63,6 +63,7 @@ export default {
   width: 24%;
   height: 40rem;
   line-height: 40rem;
+  font-size: 14rem;
 }
 .box .nav:not(:nth-child(4n)) {
   margin-right: calc(4% / 3);

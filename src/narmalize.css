@@ -24,7 +24,6 @@ td {
   border: none;
   font-family: "Microsoft Yahei", "Arial", "Helvetica", "STHeitiSC-Light",
     sans-serif;
-  font-size: calc(100vw / 375);
   margin: 0px;
   padding: 0px;
 }
@@ -32,6 +31,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-size: calc(100vw / 375);
 }
 address,
 caption,

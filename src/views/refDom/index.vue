@@ -7,7 +7,8 @@
         {{ item }}
       </li>
     </ul>
-    <input type="number" name="userName" id="" ref="dom" />
+    <!-- <input type="number" name="userName" id="" ref="dom" /> -->
+    <van-field left-icon="music-o" placeholder="显示清除图标" ref="dom" />
   </div>
 </template>
 
@@ -37,3 +38,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+div {
+  font-size: 22rem;
+}
+button {
+  height: 40rem;
+}
+</style>
