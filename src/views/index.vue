@@ -1,4 +1,4 @@
-<template>
+script<template>
   <div class="Index">
     Home123
     <van-divider
@@ -20,6 +20,7 @@ import {
   onUnmounted,
   onErrorCaptured,
 } from "vue";
+// import { test } from "@/api/test";
 export default {
   name: "Index",
   setup() {
@@ -52,6 +53,14 @@ export default {
   mounted() {
     // vue2.x 中 mounted
     console.log("vue2.x 中 mounted");
+  },
+  created() {
+    // this.test();
+  },
+  methods: {
+    async test() {
+      // await test();
+    },
   },
 };
 </script>

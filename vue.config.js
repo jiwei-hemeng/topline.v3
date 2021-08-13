@@ -13,7 +13,7 @@ module.exports = {
     disableHostCheck: true, // 可以开启内网穿透
     proxy: {
       "/dev-api": {
-        target: "https://www.bilibili.com", //API服务器的地址
+        target: "http://192.168.1.2:3006", //API服务器的地址
         ws: true, //代理websockets
         changeOrigin: true, // 是否跨域，虚拟的站点需要更管origin
         pathRewrite: {

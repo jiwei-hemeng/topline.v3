@@ -2,7 +2,7 @@ import axios from "axios";
 const baseURL = process.env.VUE_APP_BASE_URL;
 let Request = axios.create({
   baseURL,
-  timeout: 60000,
+  // timeout: 60000,
 });
 // 请求拦截器
 Request.interceptors.request.use((config) => {
