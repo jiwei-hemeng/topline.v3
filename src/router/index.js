@@ -6,21 +6,21 @@ const routes = [
     path: "/home",
     name: "home",
     component: () => import(/* webpackChunkName: "group-home" */ "@/views"),
-    meta: { transition: "slide-left" },
+    meta: { transition: "fade" },
   },
   {
     path: "/about",
     name: "about",
     component: () =>
       import(/* webpackChunkName: "group-about" */ "@/views/About"),
-    meta: { transition: "slide-left" },
+    meta: { transition: "fade" },
   },
   {
     path: "/refDom",
     name: "refDom",
     component: () =>
       import(/* webpackChunkName: "group-refDom" */ "@/views/refDom"),
-    meta: { transition: "slide-left", keep: true },
+    meta: { transition: "fade", keep: true },
   },
   {
     path: "/animationend",
@@ -29,7 +29,7 @@ const routes = [
       import(
         /* webpackChunkName: "group-animationend" */ "@/views/animationend"
       ),
-    meta: { transition: "slide-left" },
+    meta: { transition: "fade" },
   },
 ];
 
