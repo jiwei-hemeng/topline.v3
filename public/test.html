@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组的降维</title>
+  </head>
+  <body>
+    <script>
+      console.log(
+        "==========================数组的降维============================="
+      );
+      const arr1 = [[1, 2, 3], [4, 8, 5], 10, 20, [[[30]]]];
+      function flatArr(arr) {
+        return arr.reduce((pre, cur) => {
+          // return pre.concat(Array.isArray(cur) ? flatArr(cur) : cur);
+          if (Array.isArray(cur)) {
+            // return [...pre, ...flatArr(cur)];
+            return pre.concat(flatArr(cur));
+          }
+          // return [...pre, cur];
+          return pre.concat(cur);
+        }, []);
+      }
+      const result = flatArr(arr1);
+      console.log("result", result);
+      console.log("数组的降维", arr1.flat(Infinity));
+    </script>
+    <script>
+      console.log(
+        "==========================获取明日时间戳========================="
+      );
+      const currentTime = new Date(new Date().toLocaleDateString());
+      const tormTime = currentTime.getTime() + 24 * 60 * 60 * 1000;
+      console.log("tormTime", new Date(tormTime));
+      console.log(
+        "============================今日剩余时间========================="
+      );
+      const now = new Date();
+      const hh = now.getHours();
+      const mm = now.getMinutes();
+      const ss = now.getSeconds();
+      const shengyu =
+        24 * 60 * 60 * 1000 - hh * 60 * 60 * 1000 - mm * 60 * 1000 - ss * 1000;
+      const shh = Math.ceil(shengyu / 3600000);
+      const smm = Math.ceil((shengyu % 3600000) / 60000);
+      const sss = Math.ceil(((shengyu % 3600000) % 60000) / 1000);
+      console.log("剩余时间", `${shh}小时${smm}分钟${sss}秒`);
+      console.log(
+        "==========================数字金钱的格式========================="
+      );
+      const money = 9876543210;
+      console.log("money", money.toLocaleString());
+    </script>
+  </body>
+</html>
