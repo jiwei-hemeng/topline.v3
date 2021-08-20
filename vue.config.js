@@ -37,5 +37,10 @@ module.exports = {
       axios: "axios",
       vant: "vant",
     },
+    resolve: {
+      alias: {
+        components: "@/components",
+      },
+    },
   },
 };

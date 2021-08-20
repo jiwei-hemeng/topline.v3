@@ -11,7 +11,7 @@
 import { computed, reactive, toRefs, watchEffect, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import myButton from "@/components/button";
+import myButton from "components/button";
 export default {
   name: "About",
   components: {
