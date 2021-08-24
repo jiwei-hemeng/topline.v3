@@ -14,12 +14,9 @@
       const arr1 = [[1, 2, 3], [4, 8, 5], 10, 20, [[[30]]]];
       function flatArr(arr) {
         return arr.reduce((pre, cur) => {
-          // return pre.concat(Array.isArray(cur) ? flatArr(cur) : cur);
           if (Array.isArray(cur)) {
-            // return [...pre, ...flatArr(cur)];
             return pre.concat(flatArr(cur));
           }
-          // return [...pre, cur];
           return pre.concat(cur);
         }, []);
       }
@@ -50,8 +47,28 @@
       console.log(
         "==========================数字金钱的格式========================="
       );
-      const money = 9876543210;
+      const money = 9876543210987654321n;
       console.log("money", money.toLocaleString());
+      console.log(12n + 12n, typeof 12n);
+      console.log(
+        "==========================深度拷贝==============================="
+      );
+      function deepCopy(obj) {
+        if (typeof obj === "object") {
+          var result = obj.constructor === "Array" ? [] : {};
+          for (let key in obj) {
+            result[key] =
+              typeof obj[key] === "object" ? deepCopy(obj[key]) : obj[key];
+          }
+        } else {
+          result = obj;
+        }
+        return result;
+      }
+      let oldVal = { s1: 123, s2: [1, 2, 3] };
+      let newVal = deepCopy(oldVal);
+      newVal.s1 = 456;
+      console.log("newVal", newVal, oldVal);
     </script>
   </body>
 </html>
